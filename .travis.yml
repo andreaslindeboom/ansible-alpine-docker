@@ -7,8 +7,4 @@ env:
   - REPOSITORY_NAME=lindeboomio/ansible-alpine
 
 script:
-  - docker build -t $REPOSITORY_NAME .
-  - docker tag $REPOSITORY_NAME:latest $REPOSITORY_NAME:$TRAVIS_TAG
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push $REPOSITORY_NAME
-  - docker logout
+  - travis-build.sh
