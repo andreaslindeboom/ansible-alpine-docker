@@ -8,4 +8,4 @@ env:
   - DEFAULT_TAG=development
 
 script:
-  - travis-build.sh
+  - build.sh
