@@ -8,4 +8,4 @@ env:
   - DEFAULT_TAG=development
 
 script:
-  - build.sh
+  - sh build.sh
