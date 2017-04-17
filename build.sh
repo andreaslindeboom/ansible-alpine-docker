@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 docker build -t $REPOSITORY_NAME:$DEFAULT_TAG .
 
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
