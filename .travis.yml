@@ -12,4 +12,3 @@ env:
 
 script:
   - ./build.sh
-  - ./test.sh
