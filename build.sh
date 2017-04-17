@@ -9,9 +9,9 @@ docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 if [[ ! -z $TRAVIS_TAG ]]; then
   echo "Tag found, tagging image ($REPOSITORY_NAME:$TRAVIS_TAG)"
-  docker tag $REPOSITORY_NAME:master $REPOSITORY_NAME:$TRAVIS_TAG
+  docker tag $REPOSITORY_NAME:$DEFAULT_TAG $REPOSITORY_NAME:$TRAVIS_TAG
   echo "Tag found, tagging image ($REPOSITORY_NAME:latest)"
-  docker tag $REPOSITORY_NAME:master $REPOSITORY_NAME:latest
+  docker tag $REPOSITORY_NAME:$DEFAULT_TAG $REPOSITORY_NAME:latest
 fi
 
 echo "Push repository $REPOSITORY_NAME"
