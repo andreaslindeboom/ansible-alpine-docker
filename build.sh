@@ -15,7 +15,7 @@ if [[ ! -z $TRAVIS_TAG ]]; then
   echo "Tagging image with Git tag: $REPOSITORY_NAME:$TRAVIS_TAG"
   docker tag $REPOSITORY_NAME:$DEFAULT_TAG $REPOSITORY_NAME:$TRAVIS_TAG
 
-  echo "Tagging image with Ansible version: $REPOSITORY_NAME:$ANSIBLE_VERSION"
+  echo "Tagging image with Ansible version: $REPOSITORY_NAME:$ANSIBLE_VERSION-latest"
   docker tag $REPOSITORY_NAME:$DEFAULT_TAG $REPOSITORY_NAME:$ANSIBLE_VERSION
 
   echo "Tagging image as latest: $REPOSITORY_NAME:latest"
