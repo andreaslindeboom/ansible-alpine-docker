@@ -14,7 +14,7 @@ if [[ ! -z $TRAVIS_TAG ]]; then
   docker tag $REPOSITORY_NAME:master $REPOSITORY_NAME:latest
 fi
 
-echo "Push repoitory $REPOSITORY_NAME"
+echo "Push repository $REPOSITORY_NAME"
 docker push $REPOSITORY_NAME
 
 echo "Log out on Docker Hub"
