@@ -9,6 +9,7 @@ env:
   global:
     - REPOSITORY_NAME=lindeboomio/ansible-alpine
     - DEFAULT_TAG=development
+    - ANSIBLE_VERSION=2.3.0.0
 
 script:
   - ./build.sh

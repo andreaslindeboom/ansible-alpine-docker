@@ -11,9 +11,14 @@ echo "Log in on Docker Hub with user $DOCKER_USERNAME"
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 if [[ ! -z $TRAVIS_TAG ]]; then
-  echo "Tag found, tagging image ($REPOSITORY_NAME:$TRAVIS_TAG)"
+  echo "Release found:"
+  echo "Tagging image with Git tag: $REPOSITORY_NAME:$TRAVIS_TAG"
   docker tag $REPOSITORY_NAME:$DEFAULT_TAG $REPOSITORY_NAME:$TRAVIS_TAG
-  echo "Tag found, tagging image ($REPOSITORY_NAME:latest)"
+
+  echo "Tagging image with Ansible version: $REPOSITORY_NAME:$ANSIBLE_VERSION"
+  docker tag $REPOSITORY_NAME:$DEFAULT_TAG $REPOSITORY_NAME:$ANSIBLE_VERSION
+
+  echo "Tagging image as latest: $REPOSITORY_NAME:latest"
   docker tag $REPOSITORY_NAME:$DEFAULT_TAG $REPOSITORY_NAME:latest
 fi
 
