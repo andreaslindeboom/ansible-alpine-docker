@@ -6,8 +6,9 @@ services:
   - docker
 
 env:
-  - REPOSITORY_NAME="lindeboomio/ansible-alpine"
-  - DEFAULT_TAG="development"
+  global:
+    - REPOSITORY_NAME=lindeboomio/ansible-alpine
+    - DEFAULT_TAG=development
 
 script:
-  - bash build.sh
+  - ./build.sh
