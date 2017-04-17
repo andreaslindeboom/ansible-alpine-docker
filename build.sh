@@ -11,7 +11,7 @@ echo "Log in on Docker Hub with user $DOCKER_USERNAME"
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 if [[ ! -z $TRAVIS_TAG ]]; then
-  echo "Release found:"
+  echo "Release found with Git tag $TRAVIS_TAG"
   echo "Tagging image with Git tag: $REPOSITORY_NAME:$TRAVIS_TAG"
   docker tag $REPOSITORY_NAME:$DEFAULT_TAG $REPOSITORY_NAME:$TRAVIS_TAG
 
