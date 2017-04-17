@@ -5,6 +5,7 @@ services:
 
 env:
   - REPOSITORY_NAME=lindeboomio/ansible-alpine
+  - DEFAULT_TAG=development
 
 script:
   - travis-build.sh
