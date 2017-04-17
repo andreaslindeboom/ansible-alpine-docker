@@ -1,15 +1,18 @@
-FROM alpine:3.4
+FROM alpine:3.5
+
+ENV ANSIBLE_VERSION 2.3.0.0
 
 RUN apk add --no-cache \
-    ansible \
-    py-pip \
-    ca-certificates \
-    gcc \
-    python-dev \
-    musl-dev \
-    linux-headers && \
-    pip install shade
+        py-pip \
+        gcc \
+        musl-dev \
+        python-dev \
+        libffi-dev \
+        openssl-dev && \
+    pip install --upgrade \
+        pip \
+        ansible==$ANSIBLE_VERSION
 
-WORKDIR /workdir/
+WORKDIR /ansible/
 
-VOLUME /workdir/
+VOLUME /ansible/
