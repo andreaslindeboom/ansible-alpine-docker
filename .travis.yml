@@ -4,7 +4,7 @@ services:
   - docker
 
 env:
-  - REPOSITORY_NAME=andreaslindeboom/ansible-alpine
+  - REPOSITORY_NAME=lindeboomio/ansible-alpine
 
 script:
   - docker build -t $REPOSITORY_NAME .
